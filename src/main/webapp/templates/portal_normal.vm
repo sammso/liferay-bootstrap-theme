@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language(" lang.dir")" dir="#language("
+	lang.dir")" lang="$w3c_language_id">
+
+<head>
+<title>$the_title - $company_name</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+$theme.include($top_head_include)
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+<body class="$css_class">
+
+	$theme.include($body_top_include) #if ($is_signed_in) #dockbar() #end
+	
+		#if ($has_navigation || $is_signed_in) #parse
+		("$full_templates_path/navigation.vm") #end
+		
+	<div id="wrapper" class="container">
+		
+
+		<div id="content">
+			<div>
+				<h2>
+					<span>$the_title</span>
+				</h2>
+			</div>
+			<!-- 		<nav class="site-breadcrumbs" id="breadcrumbs"> -->
+			<!-- 			<h1> -->
+			<!-- 				<span>#language("breadcrumbs")</span> -->
+			<!-- 			</h1> -->
+
+			<!-- 			#breadcrumbs() -->
+			<!-- 		</nav> -->
+
+			#if ($selectable) $theme.include($content_include) #else
+			$portletDisplay.recycle() $portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include) #end
+
+		</div>
+
+		<footer id="footer" role="contentinfo">
+			<p class="powered-by">
+				#language("powered-by") <a href="http://www.liferay.com"
+					rel="external">Liferay</a>
+			</p>
+		</footer>
+	</div>
+
+	$theme.include($body_bottom_include)
+	<script type="text/javascript"
+		src="$javascript_folder/bootstrap.min.js"></script>
+		
+</body>
+
+$theme.include($bottom_include)
+
+</html>

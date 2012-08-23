@@ -1,0 +1,21 @@
+h1,h2,h3 {
+	clear: both;
+}
+
+.lfr-actions .lfr-trigger,.lfr-actions .lfr-trigger strong {
+	background-image: none;
+}
+
+.portlet-msg-info {
+	background-image: none;
+}
+
+.portlet-topper-toolbar {
+	font-size: 12px;
+}
+
+/* .aui-dialog { */
+/* 	position: relative; */
+/* 	margin-top: 40px; */
+/* 	top: 0px; */
+/* } */
