@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.selamaa</groupId>
 	<artifactId>liferay-bootstrap-theme</artifactId>
@@ -34,6 +35,31 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>com.liferay.maven.plugins</groupId>
+									<artifactId>liferay-maven-plugin</artifactId>
+									<versionRange>[6.1.0,)</versionRange>
+									<goals>
+										<goal>theme-merge</goal>
+										<goal>build-thumbnail</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<execute/>
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -83,7 +109,7 @@
 		</dependency>
 	</dependencies>
 	<properties>
-<!-- 		<liferay.auto.deploy.dir>../bundles/deploy</liferay.auto.deploy.dir> -->
+		<!-- <liferay.auto.deploy.dir>../bundles/deploy</liferay.auto.deploy.dir> -->
 		<liferay.theme.parent>_styled</liferay.theme.parent>
 		<liferay.theme.type>vm</liferay.theme.type>
 		<liferay.version>6.1.0</liferay.version>

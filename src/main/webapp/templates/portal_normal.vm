@@ -21,8 +21,10 @@ $theme.include($top_head_include)
 		
 	<div id="wrapper" class="container">
 		
+		
 
-		<div id="content">
+		<div id="content" class="row">
+		<div class="span12">
 			<div>
 				<h2>
 					<span>$the_title</span>
@@ -49,6 +51,7 @@ $theme.include($top_head_include)
 					rel="external">Liferay</a>
 			</p>
 		</footer>
+		</div>
 	</div>
 
 	$theme.include($body_bottom_include)

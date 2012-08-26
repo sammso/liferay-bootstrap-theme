@@ -4,8 +4,8 @@
 #set ($portlet_title = $portlet_display.getTitle())
 #set ($portlet_back_url = $htmlUtil.escapeAttribute($portlet_display.getURLBack()))
 
-<section class="portlet container-fluid" id="portlet_$portlet_id">
-	<header class="portlet-topper row-fluid">
+<section class="portlet container" id="portlet_$portlet_id">
+	<header class="portlet-topper row">
 	<div class="span9">
 <!-- 		<h3 class="portlet-title"> -->
 <!-- 			$theme.iconPortlet() <span class="portlet-title-text">$portlet_title</span> -->
@@ -25,7 +25,7 @@
 	</div>
 	</header>
 
-	<div class="portlet-content row-fluid">
+	<div class="portlet-content row">
 		<div class="span12">
 			$portlet_display.writeContent($writer)
 		</div>
